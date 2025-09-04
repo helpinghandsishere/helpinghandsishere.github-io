@@ -6,63 +6,81 @@
   <title>Helping Hands</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --yellow: #F9E79F;      /* soft yellow */
+      --orange: #F5B041;      /* warm orange */
+      --orange-dark: #D35400; /* deeper orange for hover */
+      --text: #444;
+      --bg: #FFFDF8;          /* soft cream background */
+    }
+
     body {
       font-family: 'Open Sans', sans-serif;
       margin: 0;
-      padding: 0;
-      color: #333;
+      color: var(--text);
       line-height: 1.6;
-      background: #fefefe;
+      background: var(--bg);
     }
 
     h1, h2, h3 {
       font-family: 'Oswald', sans-serif;
       margin-bottom: 15px;
-      color: #2E5EAA;
+      color: var(--orange-dark);
     }
 
-    /* Hero Section with Logo */
+    /* Hero Section with Circular Logo */
     header.hero {
-      background: linear-gradient(135deg, #4CAF50, #2E5EAA);
+      background: linear-gradient(135deg, var(--yellow), var(--orange));
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      position: relative;
-      color: white;
+      padding: 24px;
     }
 
     header.hero .overlay {
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.6);
       padding: 40px;
       border-radius: 16px;
+      backdrop-filter: blur(3px);
     }
 
-    header.hero img {
-      border-radius: 50%;
-      margin-bottom: 20px;
+    .logo-wrap {
       width: 180px;
-      height: auto;
-      border: 5px solid white;
-      background: white;
-      padding: 10px;
+      height: 180px;
+      border-radius: 50%;
+      background: #fff;
+      border: 6px solid #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin: 0 auto 20px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      aspect-ratio: 1/1;
     }
 
     .btn-primary {
       display: inline-block;
       padding: 12px 24px;
-      border-radius: 6px;
+      border-radius: 8px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 700;
       margin-top: 20px;
-      background: #4CAF50;
-      color: white;
-      transition: background 0.3s ease;
+      background: var(--orange);
+      color: #fff;
+      transition: background .25s ease;
     }
 
     .btn-primary:hover {
-      background: #388E3C;
+      background: var(--orange-dark);
     }
 
     section {
@@ -72,18 +90,20 @@
       text-align: center;
     }
 
-    /* About section with group photo background */
+    /* About section with Group Photo Background */
     section#about {
-      background: url("1cb668bd-04a3-40b6-8b22-8db986c1c6b5.JPG") center/cover no-repeat;
-      color: white;
       position: relative;
+      color: #fff;
+      background: url("Untitled.jpg") center/cover no-repeat;
+      border-radius: 16px;
+      overflow: hidden;
     }
 
     section#about::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(46, 94, 170, 0.7); /* blue overlay for readability */
+      background: rgba(245, 176, 65, 0.7); /* orange overlay for readability */
     }
 
     section#about > * {
@@ -105,23 +125,23 @@
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform .2s ease, box-shadow .2s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
     }
 
     footer {
-      background: #2E5EAA;
-      color: white;
+      background: var(--orange-dark);
+      color: #fff;
       text-align: center;
       padding: 30px 20px;
     }
 
     footer a {
-      color: #FFEB3B;
+      color: var(--yellow);
       margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
@@ -137,14 +157,17 @@
   <!-- Hero Section with Logo -->
   <header class="hero">
     <div class="overlay">
-      <img src="Untitled.jpg" alt="Helping Hands Logo">
+      <div class="logo-wrap">
+        <!-- This is your LOGO (the 1cb... file) -->
+        <img src="1cb668bd-04a3-40b6-8b22-8db986c1c6b5.JPG" alt="Helping Hands Logo">
+      </div>
       <h1>Helping Hands</h1>
       <p>Together we make a difference 💛</p>
       <a href="#about" class="btn-primary">Learn More</a>
     </div>
   </header>
 
-  <!-- About Section with Group Photo Background -->
+  <!-- About Section with Group Photo -->
   <section id="about">
     <h2>About Us</h2>
     <p>
@@ -152,11 +175,14 @@
       Our mission is to spread kindness and provide opportunities for a brighter future.
     </p>
     <p>
-      👉 Visit our <a href="https://sites.google.com/YOUR-SITE-HERE" target="_blank" style="color:#FFEB3B; font-weight:bold;">Google Site</a> to learn more!
+      👉 Visit our 
+      <a href="https://sites.google.com/u/1/d/1ENFkfwQ63017tBCb9kAlt7VRAyuZEUq5/preview" target="_blank" style="color:#F9E79F; font-weight:bold;">
+        Google Site
+      </a> to learn more!
     </p>
   </section>
 
-  <!-- Programs / Cards Section -->
+  <!-- Programs -->
   <section id="programs">
     <h2>Our Programs</h2>
     <div class="cards">
@@ -179,8 +205,7 @@
   <footer>
     <p>&copy; 2025 Helping Hands. All rights reserved.</p>
     <p>
-      🌐 <a href="https://sites.google.com/u/1/d/1ENFkfwQ63017tBCb9kAlt7VRAyuZEUq5/preview?fbclid=PAdGRjcAMmnZhleHRuA2FlbQIxMQABp_ScA_eQPhqkHJs3ddcdzerZAjFLEU80UK4Gp_Shl5NlR3q7WDsBCXV69aWt_aem_XZU4pm50sFBv3aULyvjJWQ
-">Our Google Site</a> | 
+      🌐 <a href="https://sites.google.com/u/1/d/1ENFkfwQ63017tBCb9kAlt7VRAyuZEUq5/preview" target="_blank">Our Google Site</a> | 
       🎵 <a href="https://www.tiktok.com/@helping.hands.is.here?_t=ZS-8zS0Mgbetiy&_r=1" target="_blank">TikTok</a> | 
       📸 <a href="https://www.instagram.com/helping_hands_is_here?igsh=MjJ5dWY0eDkzdm8x" target="_blank">Instagram</a>
     </p>
