@@ -12,54 +12,57 @@
       padding: 0;
       color: #333;
       line-height: 1.6;
-      background: #fafafa;
+      background: #fefefe;
     }
 
     h1, h2, h3 {
       font-family: 'Oswald', sans-serif;
       margin-bottom: 15px;
+      color: #2E5EAA;
     }
 
+    /* Hero Section with Logo */
     header.hero {
-      background: url("1cb668bd-04a3-40b6-8b22-8db986c1c6b5.JPG") center/cover no-repeat;
+      background: linear-gradient(135deg, #4CAF50, #2E5EAA);
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: white;
       text-align: center;
       position: relative;
+      color: white;
     }
 
     header.hero .overlay {
-      background: rgba(0,0,0,0.55);
+      background: rgba(255,255,255,0.1);
       padding: 40px;
-      border-radius: 12px;
-      max-width: 600px;
+      border-radius: 16px;
     }
 
     header.hero img {
       border-radius: 50%;
       margin-bottom: 20px;
+      width: 180px;
+      height: auto;
+      border: 5px solid white;
+      background: white;
+      padding: 10px;
     }
 
-    .btn-primary, .btn-secondary {
+    .btn-primary {
       display: inline-block;
       padding: 12px 24px;
       border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
       margin-top: 20px;
+      background: #4CAF50;
+      color: white;
       transition: background 0.3s ease;
     }
 
-    .btn-primary {
-      background: #00796B;
-      color: white;
-    }
-
     .btn-primary:hover {
-      background: #004D40;
+      background: #388E3C;
     }
 
     section {
@@ -67,6 +70,25 @@
       max-width: 1000px;
       margin: auto;
       text-align: center;
+    }
+
+    /* About section with group photo background */
+    section#about {
+      background: url("1cb668bd-04a3-40b6-8b22-8db986c1c6b5.JPG") center/cover no-repeat;
+      color: white;
+      position: relative;
+    }
+
+    section#about::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(46, 94, 170, 0.7); /* blue overlay for readability */
+    }
+
+    section#about > * {
+      position: relative;
+      z-index: 1;
     }
 
     .cards {
@@ -82,18 +104,24 @@
       background: #fff;
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     }
 
     footer {
-      background: #333;
+      background: #2E5EAA;
       color: white;
       text-align: center;
       padding: 30px 20px;
     }
 
     footer a {
-      color: #FF9800;
+      color: #FFEB3B;
       margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
@@ -106,17 +134,17 @@
 </head>
 <body>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with Logo -->
   <header class="hero">
     <div class="overlay">
-      <img src="Untitled.jpg" alt="Helping Hands Logo" width="120">
+      <img src="Untitled.jpg" alt="Helping Hands Logo">
       <h1>Helping Hands</h1>
       <p>Together we make a difference 💛</p>
       <a href="#about" class="btn-primary">Learn More</a>
     </div>
   </header>
 
-  <!-- About Section -->
+  <!-- About Section with Group Photo Background -->
   <section id="about">
     <h2>About Us</h2>
     <p>
@@ -124,7 +152,7 @@
       Our mission is to spread kindness and provide opportunities for a brighter future.
     </p>
     <p>
-      👉 Visit our <a href="https://sites.google.com/YOUR-SITE-HERE" target="_blank"><strong>Google Site</strong></a> to learn more!
+      👉 Visit our <a href="https://sites.google.com/YOUR-SITE-HERE" target="_blank" style="color:#FFEB3B; font-weight:bold;">Google Site</a> to learn more!
     </p>
   </section>
 
